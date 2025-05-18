@@ -1,16 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import Link  from "next/link";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Name Age/Gender/Country Predictor",
@@ -47,9 +38,9 @@ export default function RootLayout({
         <footer className="bg-white text-black w-full px-4 py-2">
           <p>
             Tutorial Source Code: 
-            <a className="transition hover:bg-purple-200 rounded px-2" href="https://www.youtube.com/watch?v=PtDIVU_tlo0">
+            <Link className="transition hover:bg-purple-200 rounded px-2" href="https://www.youtube.com/watch?v=PtDIVU_tlo0">
                NextJS Beginner Project Tutorial - PedroTech
-            </a>
+            </Link>
           </p>
         </footer>
       </body>
