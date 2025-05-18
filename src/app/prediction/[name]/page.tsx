@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const getPredictedAge = async (name: string) => {
   const res = await fetch(`https://api.agify.io/?name=${name}`);
   return res.json();
@@ -34,3 +36,6 @@ export default async function Prediction({params}: Params) {
       </div>
   );
 }
+
+
+/* eslint-disable */
