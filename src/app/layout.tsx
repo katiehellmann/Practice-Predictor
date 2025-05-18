@@ -24,12 +24,12 @@ export default function RootLayout({
             <ul className=" mb-auto md:flex items-center justify-between text-2xl text-gray-700 pt-4 md:pt-0">
               <h1>Predict Data Based on Your Name!</h1>
               <li>
-                <a
+                <Link
                   className="md:p-4 py-3 px-0 block transition hover:bg-purple-200 rounded"
                   href="/"
                 >
                   Home
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
