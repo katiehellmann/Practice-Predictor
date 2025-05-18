@@ -1,5 +1,4 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
-
 const getPredictedAge = async (name: string): Promise<any> => { // Consider a more specific return type
   const res = await fetch(`https://api.agify.io/?name=${name}`);
   if (!res.ok) {
@@ -24,15 +23,12 @@ const getPredictedCountry = async (name: string): Promise<any> => { // Consider 
   return res.json();
 };
 
-interface Params {
-  params: { name: string };
-}
 
-export default async function Prediction({ params }: Params) {
-  try {
-    const ageData = getPredictedAge(params.name);
-    const genderData = getPredictedGender(params.name);
-    const countryData = getPredictedCountry(params.name);
+export default async function Prediction({params}: {params: Promise<{ name: string }>}) {
+  try {const { name } = await(params);
+    const ageData = getPredictedAge(name);
+    const genderData = getPredictedGender(name);
+    const countryData = getPredictedCountry(name);
 
     const [age, gender, country] = await Promise.all([ageData, genderData, countryData]) as [
       { age?: number },
